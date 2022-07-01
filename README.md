@@ -18,3 +18,6 @@
 - Comands yellow collor
 - Command 'run window file_name' - runs program in seperate console
 - Command 'author file_name' - describes who is autor of that file or who created that test
+
+## Requirements
+- Rspec ~> 3.0
