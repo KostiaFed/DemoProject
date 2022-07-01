@@ -16,4 +16,5 @@
 
 ## Ideas
 - Comands yellow collor
+- Command 'run window file_name' - runs program in seperate console
 - 
