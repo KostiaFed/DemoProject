@@ -1,6 +1,6 @@
 require './katas/KostiaFedorenko/Fedorenko_kata1.rb'
 
-Test = Struct.new(:input, :output)
+test = Struct.new(:input, :output)
 
 describe '#get_volume_of_cuboid' do
 
@@ -8,11 +8,11 @@ describe '#get_volume_of_cuboid' do
 
     it 'String' do
       tests = [
-        Test.new(['1', 2, 3], ArgumentError),
-        Test.new([1, '2', 3], ArgumentError),
-        Test.new([1, 2, '3'], ArgumentError),
-        Test.new(['1', '2', '3'], ArgumentError),
-        Test.new(['a', '2', '3'], ArgumentError)
+        test.new(['1', 2, 3], ArgumentError),
+        test.new([1, '2', 3], ArgumentError),
+        test.new([1, 2, '3'], ArgumentError),
+        test.new(['1', '2', '3'], ArgumentError),
+        test.new(['a', '2', '3'], ArgumentError)
       ]
 
       tests.each do |test|
@@ -23,10 +23,10 @@ describe '#get_volume_of_cuboid' do
 
     it 'FLoat' do
       tests = [
-        Test.new([1.1, 2, 3], ArgumentError),
-        Test.new([1, 2.1, 3], ArgumentError),
-        Test.new([1, 2, 3.1], ArgumentError),
-        Test.new([1.1, 2.1, 3.1], ArgumentError)
+        test.new([1.1, 2, 3], ArgumentError),
+        test.new([1, 2.1, 3], ArgumentError),
+        test.new([1, 2, 3.1], ArgumentError),
+        test.new([1.1, 2.1, 3.1], ArgumentError)
       ]
 
       tests.each do |test|
@@ -37,11 +37,11 @@ describe '#get_volume_of_cuboid' do
 
     it 'Integer' do
       tests = [
-          Test.new([1, 2, 3], 6),
-          Test.new([2, 3, 4], 24),
-          Test.new([3, 4, 5], 60),
-          Test.new([4, 5, 6], 120),
-          Test.new([5, 6, 7], 210)
+          test.new([1, 2, 3], 6),
+          test.new([2, 3, 4], 24),
+          test.new([3, 4, 5], 60),
+          test.new([4, 5, 6], 120),
+          test.new([5, 6, 7], 210)
       ]
 
       tests.each do |test|
@@ -55,18 +55,18 @@ describe '#get_volume_of_cuboid' do
     end
 
     it 'Zero' do
-      expect(get_volume_of_cuboid(0)).to eq(0)
+      expect(get_volume_of_cuboid(0,0,0)).to eq(0)
     end
   end
     
   context 'When true given' do
     it 'Integer' do
       tests = [
-          Test.new([1, 2, 3], 6),
-          Test.new([2, 3, 4], 24),
-          Test.new([3, 4, 5], 60),
-          Test.new([4, 5, 6], 120),
-          Test.new([5, 6, 7], 210)
+          test.new([1, 2, 3], 6),
+          test.new([2, 3, 4], 24),
+          test.new([3, 4, 5], 60),
+          test.new([4, 5, 6], 120),
+          test.new([5, 6, 7], 210)
       ]
 
       tests.each do |test|
@@ -77,11 +77,11 @@ describe '#get_volume_of_cuboid' do
 
     it '-Integer' do
       tests = [
-          Test.new([-1, 2, 3], -6),
-          Test.new([2, -3, 4], -24),
-          Test.new([3, 4, -5], -60),
-          Test.new([4, -5, -6], 120),
-          Test.new([-5, -6, -7], -210)
+          test.new([-1, 2, 3], -6),
+          test.new([2, -3, 4], -24),
+          test.new([3, 4, -5], -60),
+          test.new([4, -5, -6], 120),
+          test.new([-5, -6, -7], -210)
       ]
 
       tests.each do |test|
