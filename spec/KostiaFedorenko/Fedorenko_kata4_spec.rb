@@ -19,34 +19,36 @@ data = "Los Angeles Clippers 104 Dallas Mavericks 88,New York Knicks 101 Atlanta
 
 require './katas/KostiaFedorenko/Fedorenko_kata4'
 
-Test = Struct.new(:input, :output)
+test = Struct.new(:input, :output)
 
 describe '#nba_cup' do
 
   context 'Correct input' do
     it 'Exist' do
       tests = [
-        Test.new([data, "Boston Celtics"], "Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"),
-        Test.new([data, "Boston Celt"], "Boston Celt:This team didn't play!"),
-        Test.new([data, "Charlotte Hornets"], "Charlotte Hornets:W=2;D=0;L=2;Scored=373;Conceded=382;Points=6"),
-        Test.new([data, "Dallas Mavericks"], "Dallas Mavericks:W=1;D=0;L=4;Scored=485;Conceded=504;Points=3")
+        test.new([data, "Boston Celtics"], "Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"),
+        test.new([data, "Boston Celt"], "Boston Celt:This team didn't play!"),
+        test.new([data, "Charlotte Hornets"], "Charlotte Hornets:W=2;D=0;L=2;Scored=373;Conceded=382;Points=6"),
+        test.new([data, "Dallas Mavericks"], "Dallas Mavericks:W=1;D=0;L=4;Scored=485;Conceded=504;Points=3")
       ]
 
-      for test in tests
+      tests.each do |test|
         expect(nba_cup(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it 'Not exist' do
       tests = [
-        Test.new([data, "Boston Celt"], "Boston Celt:This team didn't play!"),
-        Test.new([data, "Charlotte Hornetss"], "Charlotte Hornetss:This team didn't play!"),
-        Test.new([data, "New York"], "New York:This team didn't play!")
+        test.new([data, "Boston Celt"], "Boston Celt:This team didn't play!"),
+        test.new([data, "Charlotte Hornetss"], "Charlotte Hornetss:This team didn't play!"),
+        test.new([data, "New York"], "New York:This team didn't play!")
       ]
 
-      for test in tests
+      tests.each do |test|
         expect(nba_cup(*test.input)).to eq(test.output)
       end
+      tests = []
     end
   end
 
@@ -57,41 +59,44 @@ describe '#nba_cup' do
 
     it 'String' do
       tests = [
-        Test.new(["", "Boston Celtics"], "Boston Celtics:This team didn't play!"),
-        Test.new(["", "Boston Celt"], "Boston Celt:This team didn't play!"),
-        Test.new(["", "Charlotte Hornets"], "Charlotte Hornets:This team didn't play!"),
-        Test.new(["", "Dallas Mavericks"], "Dallas Mavericks:This team didn't play!")
+        test.new(["", "Boston Celtics"], "Boston Celtics:This team didn't play!"),
+        test.new(["", "Boston Celt"], "Boston Celt:This team didn't play!"),
+        test.new(["", "Charlotte Hornets"], "Charlotte Hornets:This team didn't play!"),
+        test.new(["", "Dallas Mavericks"], "Dallas Mavericks:This team didn't play!")
       ]
 
-      for test in tests
+      tests.each do |test|
         expect(nba_cup(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it 'Array' do
       tests = [
-        Test.new([[], "Boston Celtics"], "Boston Celtics:This team didn't play!"),
-        Test.new([[], "Boston Celt"], "Boston Celt:This team didn't play!"),
-        Test.new([[], "Charlotte Hornets"], "Charlotte Hornets:This team didn't play!"),
-        Test.new([[], "Dallas Mavericks"], "Dallas Mavericks:This team didn't play!")
+        test.new([[], "Boston Celtics"], "Boston Celtics:This team didn't play!"),
+        test.new([[], "Boston Celt"], "Boston Celt:This team didn't play!"),
+        test.new([[], "Charlotte Hornets"], "Charlotte Hornets:This team didn't play!"),
+        test.new([[], "Dallas Mavericks"], "Dallas Mavericks:This team didn't play!")
       ]
 
-      for test in tests
+      tests.each do |test|
         expect(nba_cup(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it 'Array with string' do
       tests = [
-        Test.new([["", "Boston Celtics"], "Boston Celtics:This team didn't play!"], "Boston Celtics:This team didn't play!"),
-        Test.new([["", "Boston Celt"], "Boston Celt:This team didn't play!"], "Boston Celt:This team didn't play!"),
-        Test.new([["", "Charlotte Hornets"], "Charlotte Hornets:This team didn't play!"], "Charlotte Hornets:This team didn't play!"),
-        Test.new([["", "Dallas Mavericks"], "Dallas Mavericks:This team didn't play!"], "Dallas Mavericks:This team didn't play!")
+        test.new([["", "Boston Celtics"], "Boston Celtics:This team didn't play!"], "Boston Celtics:This team didn't play!"),
+        test.new([["", "Boston Celt"], "Boston Celt:This team didn't play!"], "Boston Celt:This team didn't play!"),
+        test.new([["", "Charlotte Hornets"], "Charlotte Hornets:This team didn't play!"], "Charlotte Hornets:This team didn't play!"),
+        test.new([["", "Dallas Mavericks"], "Dallas Mavericks:This team didn't play!"], "Dallas Mavericks:This team didn't play!")
       ]
 
-      for test in tests
+      tests.each do |test|
         expect(nba_cup(*test.input)).to eq(test.output)
       end
+      tests = []
     end
   end
 end 
