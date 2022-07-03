@@ -1,56 +1,60 @@
 require './katas/KostiaFedorenko/Fedorenko_kata5'
 
-Test = Struct.new(:input, :output)
+test = Struct.new(:input, :output)
 
 describe '#zeros' do
 
   context 'Correct input' do
     it 'Integer' do
       tests = [
-        Test.new(0, 0),
-        Test.new(6, 1),
-        Test.new(30, 7)
+        test.new(0, 0),
+        test.new(6, 1),
+        test.new(30, 7)
       ]
 
-      for test in tests
-        expect(zeros(test.input)).to eq(test.output)
+      tests.each do |test|
+        expect(zeros(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it 'Float' do
       tests = [
-        Test.new(4.5, 0),
-        Test.new(15.3, 3.06),
-        Test.new(30.0, 7)
+        test.new(4.5, 0),
+        test.new(15.3, 3.06),
+        test.new(30.0, 7)
       ]
 
-      for test in tests
-        expect(zeros(test.input)).to eq(test.output)
+      tests.each do |test|
+        expect(zeros(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it '-Integer' do
       tests = [
-        Test.new(-0, 0),
-        Test.new(-6, -1),
-        Test.new(-30, -7)
+        test.new(-0, 0),
+        test.new(-6, -1),
+        test.new(-30, -7)
       ]
 
-      for test in tests
-        expect(zeros(test.input)).to eq(test.output)
+      tests.each do |test|
+        expect(zeros(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it '-Float' do
       tests = [
-        Test.new(-4.5, 0),
-        Test.new(-15.3, -3.06),
-        Test.new(-30.0, -7)
+        test.new(-4.5, 0),
+        test.new(-15.3, -3.06),
+        test.new(-30.0, -7)
       ]
 
-      for test in tests
-        expect(zeros(test.input)).to eq(test.output)
+      tests.each do |test|
+        expect(zeros(*test.input)).to eq(test.output)
       end
+      tests = []
     end
   end
 
@@ -61,32 +65,34 @@ describe '#zeros' do
 
     it 'String' do
       tests = [
-        Test.new("", 0),
-        Test.new("Hello", 0),
-        Test.new("-Hello", 0),
-        Test.new("-0", 0),
-        Test.new("0", 0),
-        Test.new("-0.0", 0)
+        test.new("", 0),
+        test.new("Hello", 0),
+        test.new("-Hello", 0),
+        test.new("-0", 0),
+        test.new("0", 0),
+        test.new("-0.0", 0)
       ]
 
-      for test in tests
-        expect(zeros(test.input)).to eq(test.output)
+      tests.each do |test|
+        expect(zeros(*test.input)).to eq(test.output)
       end
+      tests = []
     end
 
     it 'Array' do
       tests = [
-        Test.new([], 0),
-        Test.new([1, 2, 3], 0),
-        Test.new([-1, -2, -3], 0),
-        Test.new([0, 0, 0], 0),
-        Test.new([-0, -0, -0], 0),
-        Test.new([-0.0, -0.0, -0.0], 0)
+        test.new([], 0),
+        test.new([1, 2, 3], 0),
+        test.new([-1, -2, -3], 0),
+        test.new([0, 0, 0], 0),
+        test.new([-0, -0, -0], 0),
+        test.new([-0.0, -0.0, -0.0], 0)
       ]
 
-      for test in tests
-        expect(zeros(test.input)).to eq(test.output)
+      tests.each do |test|
+        expect(zeros(*test.input)).to eq(test.output)
       end
+      tests = []
     end
   end
 end
