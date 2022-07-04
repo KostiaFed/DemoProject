@@ -3,3 +3,26 @@
 # return має бути строка з назвами всіх каталогів в вигляді строки
 # 1. Назва папки: ката1 ката2
 # 2. Назва папки: ката1 ката2
+
+#dirs = Dir.entries('../katas')
+#dirs.each do |d|
+#  p d + ":"
+#end
+class Tasks
+
+Dir.chdir('../katas')
+
+@@files = Dir['**/*'].map do |f|
+if File.directory? f
+  puts f + ':'
+elsif File.file? f
+  puts '--' + File.basename(f, '.rb')
+else
+end
+end
+
+def self.run
+  return @@files
+end
+
+end
