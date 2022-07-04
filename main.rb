@@ -3,6 +3,11 @@
 # розкоментувати рядок нижче щоб імпортувати всі файли з папки items
 # Dir["./items/*.rb"].each {|file| require file }
 
+require './items/help.rb'
+require './items/test.rb'
+require './items/tests.rb'
+require './items/author.rb'
+
 
 class Main
     def initialize
@@ -12,14 +17,14 @@ class Main
         @output = ""
 
         # Ініціалізація всіх функцій   (Розкоментовувати як тільки появляються класи)
-        # @help = Help.new
+        @help = Help.new
         # @run = Run.new
         # @show = Show.new
         # @specs = Specs.new
         # @tasks = Tasks.new
-        # @test = Test.new
-        # @tests = Tests.new
-        # @author = Author.new
+        @test = Test.new
+        @tests = Tests.new
+        @author = Author.new
 
         Logo()
         # Starts main loop
@@ -29,35 +34,35 @@ class Main
     def Loop
         while true
             print "> "
-            buff = gets.chomp.downcase
+            buff = gets.chomp
             @choose = buff.split(" ")[0]
             @argument = buff.split(" ")[1]
             
             case @choose
             when "help"
-                # @output = @help.run(@argument)
-                # puts @output
-            when "run"
+                @output = @help.run()
+                puts @output
+            when "run"                          #not ready yet
                 # @output = @run.run(@argument)
                 # puts @output
-            when "show"
+            when "show"                         #not ready yet
                 # @output = @show.run(@argument)
                 # puts @output
-            when "specs"
-                # @output = @specs.run(@argument)
+            when "specs"                        #fail
+                # @output = @specs.run()
                 # puts @output
-            when "tasks"
+            when "tasks"                        #fail
                 # @output = @tasks.run(@argument)
                 # puts @output
             when "test"
-                # @output = @test.run(@argument)
-                # puts @output
+                @output = @test.run(@argument)
+                puts @output
             when "tests"
-                # @output = @tests.run(@argument)
-                # puts @output
-            when "author"
-                # @output = @author.run(@argument)
-                # puts @output
+                @output = @tests.run()
+                puts @output
+            when "author"                        #hz
+                @output = @author.run(@argument)
+                puts @output
             when "logo"
                 Logo()
             when "clear"
