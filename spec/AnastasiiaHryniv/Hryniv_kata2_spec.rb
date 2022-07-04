@@ -19,9 +19,5 @@ describe '.two_decimal_places' do
       expect(two_decimal_places(-18.678)).to eq(-18.68)
     end
   end
-#  context 'when given random stuff' do
-#    it 'returns error message' do
-#      expect(two_decimal_places('test')).to raise_error('You tried wrong imput')
-#    end
-#  end
+
 end
