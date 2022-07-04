@@ -7,11 +7,11 @@
 - show file_name
 - run file_name
 - specs
-- ???
+- author file_name
 - ???
 - ???
 
-## Structur
+## Structure
 - Папка "katas" в якій папки кожного учасника з його катами, має бути вигляд katas/NameSurname/Surname_kata1.rb
 - Папка "specs" також з іменами і тестами в них, має бути вигляд spec/NameSurname/Surname_kata1_spec.rb (не забудьте змінити require до тестуємих кат)
 - Папка "items" тут будуть всі функції програми, кожна функція окремим файлом
