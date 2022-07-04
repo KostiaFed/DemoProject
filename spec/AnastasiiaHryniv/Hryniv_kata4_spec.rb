@@ -1,29 +1,21 @@
-require './katas/AnastasiiaHryniv/Hryniv_kata4'
+require './katas/AnastasiiaHryniv/Hryniv_kata4.rb'
 
+describe 'stockList' do
 
-describe "expanded_formy" do
-
-    it  'return string in expanded form' do
-            expect(expanded_form(12)).to include('10 + 2')
-        end    
-
-        it  'return string in expanded form if it contains 0' do
-            expect(expanded_form(102)).to include("100 + 2")
-        end   
-
-        it  'return string in expanded form if num is in a range [1-9]' do
-            expect(expanded_form(2)).to include("2")
-         end   
-
-         it  'return string in expanded number is 0' do
-            expect(expanded_form(0)).to include("")
-         end  
-
-         it  'return string in expanded if num data type is string' do
-            expect(expanded_form("12")).to include("10 + 2")
-            expect(expanded_form("1111")).to include("1000 + 100 + 10 + 1")
-         end   
+  context 'when given ideal arguments' do
+    it 'returns stock number for each category' do
+      a = ["A", "B"]
+      b = ["ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
+      expect(stockList(b, a)).to eq('(A : 200) - (B : 1140)')
     end
+  end
 
+  context 'when given empty arguments' do
+    it 'still returns value' do
+      a = ["A", "B"]
+      b = ["ABAR ", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"]
+      expect(stockList(b, a)).to eq('(A : 0) - (B : 1140)')
+    end
+  end
 
-
+end

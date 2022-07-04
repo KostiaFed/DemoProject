@@ -1,10 +1,27 @@
-require './katas/AnastasiiaHryniv/Hryniv_kata2'
+require './katas/AnastasiiaHryniv/Hryniv_kata2.rb'
 
-
-describe "difference" do
-    it  'the difference of the cuboids volumes' do
-        expect(find_difference([3, 2, 5],[1, 4, 4])).to eql(14)
-        expect(find_difference([9, 7, 2], [5, 2, 2])).to eql(106)
-        expect(find_difference([4, 1, 3], [5, 4, 5])).to eql(88)
-        end    
+describe '.two_decimal_places' do
+  context 'When given a number' do
+    it 'returns it rounded to two decimal places' do
+      expect(two_decimal_places(5.5589)).to eq(5.56)
+      expect(two_decimal_places(14.788888)).to eq(14.79)
     end
+  end
+
+  context 'when given zero' do
+    it 'returns 0.00' do
+      expect(two_decimal_places(0)).to eq(0.00)
+    end
+  end
+
+  context 'when given a negative number' do
+    it 'returns it rounded' do
+      expect(two_decimal_places(-18.678)).to eq(-18.68)
+    end
+  end
+#  context 'when given random stuff' do
+#    it 'returns error message' do
+#      expect(two_decimal_places('test')).to raise_error('You tried wrong imput')
+#    end
+#  end
+end

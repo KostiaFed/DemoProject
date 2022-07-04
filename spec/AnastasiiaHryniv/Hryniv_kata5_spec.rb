@@ -1,29 +1,15 @@
-require './katas/AnastasiiaHryniv/Hryniv_kata5'
+require './katas/AnastasiiaHryniv/Hryniv_kata5.rb'
 
-describe "incrementer" do
+describe 'perimeter' do
 
-    it  'If the string already ends with a number' do
-            expect(increment_string('string22')).to eql('string23')
-        end  
+context 'when there\'s one more square' do
+  it 'returns sum of the square perimeters' do
+    expect(perimeter(5)).to eq(80)
+    expect(perimeter(7)).to eq(216)
+    expect(perimeter(20)).to eq(114624)
+    expect(perimeter(30)).to eq(14098308)
+    expect(perimeter(100)).to eq(6002082144827584333104)
+  end
+end
 
-    it  'If the string does not end with a number' do
-            expect(increment_string('string')).to eql('string1')
-        end    
-
-     it  'If in the string number ends with a 9' do
-            expect(increment_string('string9')).to eql('string10')
-            expect(increment_string('string99')).to eql('string100')
-        end   
-    it  'If in the string before number we have 0' do
-            expect(increment_string('string02')).to eql('string03')
-            expect(increment_string('string00')).to eql('string01')
-
-        end  
-    it  'If in the string does not include any data' do
-            expect(increment_string('')).to eql('1')
-        end  
-
-    it  'If in the string starts with number' do
-            expect(increment_string('1string')).to eql('1string1')
-        end  
-    end
+end

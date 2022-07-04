@@ -1,5 +1,16 @@
-# Тут потрібно створити програму яка буде повертати всі доступні тести в каталозі specs
-# Створіть клас Specs і в ньому метод run
-# return має бути строка з назвами всіх каталогів в вигляді строки
-# 1. Назва папки: test1 test2
-# 2. Назва папки: test1 test2
+class Specs
+  Start_path = '../spec'
+  def run()
+    result = ""
+    Dir.each_child(Start_path) {|tests|
+      unless tests.include?('.rb')
+        path = Dir.new(Start_path+"/#{tests}")
+        result += "#{tests}:\n"
+        specs = ''
+        path.each_child {|test| specs += "  -#{test.gsub('.rb', '')}\n" } 
+        result += specs + "\n"
+      end
+    }
+    result
+  end
+end
