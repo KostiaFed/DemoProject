@@ -33,8 +33,7 @@ class Test
     else
       raise Exception, "You have entered wrong value, please try again"
     end
-    result = "bin/rspec spec/#{selected_folder}/#{test_name.capitalize()}.rb"
-    value = `#{result}`
-    return value
+    result = "bin/rspec spec/#{selected_folder}/#{test_name.capitalize}.rb"
+    `#{result}`
   end
 end
