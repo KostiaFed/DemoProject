@@ -9,6 +9,8 @@ class Main
         @choose = ""
         @argument = ""
 
+        @output = ""
+
         # Ініціалізація всіх функцій   (Розкоментовувати як тільки появляються класи)
         # @help = Help.new
         # @run = Run.new
@@ -17,6 +19,7 @@ class Main
         # @tasks = Tasks.new
         # @test = Test.new
         # @tests = Tests.new
+        # @author = Author.new
 
         Logo()
         # Starts main loop
@@ -32,19 +35,29 @@ class Main
             
             case @choose
             when "help"
-                # @help.run(@argument)
+                # @output = @help.run(@argument)
+                # puts @output
             when "run"
-                # @run.run(@argument)
+                # @output = @run.run(@argument)
+                # puts @output
             when "show"
-                # @show.run(@argument)
+                # @output = @show.run(@argument)
+                # puts @output
             when "specs"
-                # @specs.run(@argument)
+                # @output = @specs.run(@argument)
+                # puts @output
             when "tasks"
-                # @tasks.run(@argument)
+                # @output = @tasks.run(@argument)
+                # puts @output
             when "test"
-                # @test.run(@argument)
+                # @output = @test.run(@argument)
+                # puts @output
             when "tests"
-                # @tests.run(@argument)
+                # @output = @tests.run(@argument)
+                # puts @output
+            when "author"
+                # @output = @author.run(@argument)
+                # puts @output
             when "logo"
                 Logo()
             when "clear"
