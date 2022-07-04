@@ -26,5 +26,3 @@ def self.run
 end
 
 end
-
-Tasks.run
