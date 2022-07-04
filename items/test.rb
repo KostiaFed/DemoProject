@@ -35,8 +35,6 @@ class Test
     end
     result = "bin/rspec spec/#{selected_folder}/#{test_name.capitalize()}.rb"
     value = `#{result}`
-    puts value
+    return value
   end
 end
-test = Test.new
-test.run("Fedorenko_kata2_spec")
