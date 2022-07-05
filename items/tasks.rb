@@ -4,24 +4,34 @@
 # 1. Назва папки: ката1 ката2
 # 2. Назва папки: ката1 ката2
 
-#dirs = Dir.entries('../katas')
-#dirs.each do |d|
-#  p d + ":"
-#end
+
 class Tasks
 
-Dir.chdir('../katas')
+  def run
+    files = get_files
+    result = ""
 
-  @@files = Dir['**/*'].map do |f|
-    if File.directory? f
-      puts f + ':'
-    elsif File.file? f
-      puts '--' + File.basename(f, '.rb')
+    files.each do |folder|
+      result += folder[:name].split("/")[-1] + ":\n"
+
+      folder[:files].each do |file|
+        result += " --" + file.split("/")[-1] + "\n"
+      end
     end
+
+    return result
   end
 
-  def self.run
-    return @@files
-  end
+  def get_files
+    folders_and_files = []
+    folders = Dir['./katas/*']
 
+    folders.each do |folder|
+      if File.directory?(folder)
+        folders_and_files << {name: folder, files: Dir["#{folder}/*"]}
+      end
+    end
+
+    return folders_and_files
+  end
 end

@@ -6,6 +6,8 @@
 class Author
 
   def run(file)
+    list_of_files()
+
     surname = file.split("_")[0].downcase
     # checking if such file exists
     if @files_results_array.include?("#{file.downcase}.rb") ||
@@ -49,6 +51,5 @@ class Author
       item = File.basename(item)
       @files_results_array << item
     end
-    puts @files_results_array
   end
 end

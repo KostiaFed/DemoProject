@@ -1,12 +1,8 @@
 # Виклик кат і робота з консоллю
 
 # розкоментувати рядок нижче щоб імпортувати всі файли з папки items
-# Dir["./items/*.rb"].each {|file| require file }
+Dir["./items/*.rb"].each {|file| require file }
 
-require './items/help.rb'
-require './items/test.rb'
-require './items/tests.rb'
-require './items/author.rb'
 
 
 class Main
@@ -24,20 +20,17 @@ class Main
         
         case choose
         when "help"
-            output = Help.new.run()
+            output = Help.new.run(argument)
             puts output
         when "run"                          #not ready yet
             # output = Run.new.run(argument)
             # puts output
         when "show"                         #not ready yet
-            # output = Show.new.run(argument)
-            # puts output
-        when "specs"                        #fail
-            # output = Specs.new.run()
-            # puts output
+            output = Show.new.run(argument)
+            puts output
         when "tasks"                        #fail
-            # output = Tasks.new.run(argument)
-            # puts output
+            output = Tasks.new.run()
+            puts output
         when "test"
             output = Test.new.run(argument)
             puts output
@@ -48,7 +41,7 @@ class Main
             output = Author.new.run(argument)
             puts output
         when "logo"
-            Logo()
+            logo()
         when "clear"
             system("cls")
         when "exit"
