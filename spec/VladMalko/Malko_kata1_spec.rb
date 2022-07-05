@@ -16,7 +16,7 @@ describe '#divisible_by' do
       ]
 
       tests.each do |test|
-        expect(closest(*test.input)).to eq(test.output)
+        expect(divisible_by(*test.input)).to eq(test.output)
       end
       tests = []
     end

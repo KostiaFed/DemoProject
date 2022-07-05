@@ -4,6 +4,7 @@
 # returns name, surname and github of the author
 
 class Author
+
   def run(file)
     surname = file.split("_")[0].downcase
     # checking if such file exists
