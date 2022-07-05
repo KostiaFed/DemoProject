@@ -11,72 +11,58 @@ require './items/author.rb'
 
 class Main
     def initialize
-        @choose = ""
-        @argument = ""
+        output = ""
 
-        @output = ""
-
-        # Ініціалізація всіх функцій   (Розкоментовувати як тільки появляються класи)
-        @help = Help.new
-        # @run = Run.new
-        # @show = Show.new
-        # @specs = Specs.new
-        # @tasks = Tasks.new
-        @test = Test.new
-        @tests = Tests.new
-        @author = Author.new
-
-        Logo()
+        logo()
         # Starts main loop
-        Loop()
+        loop()
     end
 
-    def Loop
-        while true
-            print "> "
-            buff = gets.chomp
-            @choose = buff.split(" ")[0]
-            @argument = buff.split(" ")[1]
-            
-            case @choose
-            when "help"
-                @output = @help.run()
-                puts @output
-            when "run"                          #not ready yet
-                # @output = @run.run(@argument)
-                # puts @output
-            when "show"                         #not ready yet
-                # @output = @show.run(@argument)
-                # puts @output
-            when "specs"                        #fail
-                # @output = @specs.run()
-                # puts @output
-            when "tasks"                        #fail
-                # @output = @tasks.run(@argument)
-                # puts @output
-            when "test"
-                @output = @test.run(@argument)
-                puts @output
-            when "tests"
-                @output = @tests.run()
-                puts @output
-            when "author"                        #hz
-                @output = @author.run(@argument)
-                puts @output
-            when "logo"
-                Logo()
-            when "clear"
-                system("cls")
-            when "exit"
-                puts "\nBye!\n"
-                break
-            else
-                puts "Wrong command! Type 'help' to see list of commands."
-            end
+    def loop
+        print "> "
+        buff = gets.chomp
+        choose = buff.split(" ")[0]
+        argument = buff.split(" ")[1]
+        
+        case choose
+        when "help"
+            output = Help.new.run()
+            puts output
+        when "run"                          #not ready yet
+            # output = Run.new.run(argument)
+            # puts output
+        when "show"                         #not ready yet
+            # output = Show.new.run(argument)
+            # puts output
+        when "specs"                        #fail
+            # output = Specs.new.run()
+            # puts output
+        when "tasks"                        #fail
+            # output = Tasks.new.run(argument)
+            # puts output
+        when "test"
+            output = Test.new.run(argument)
+            puts output
+        when "tests"
+            output = Tests.new.run()
+            puts output
+        when "author"                        #hz
+            output = Author.new.run(argument)
+            puts output
+        when "logo"
+            Logo()
+        when "clear"
+            system("cls")
+        when "exit"
+            puts "\nBye!\n"
+            exit
+        else
+            puts "Wrong command! Type 'help' to see list of commands."
         end
+        loop()
     end
 
-    def Logo
+    def logo
         system("cls")
         puts "                              @@@@                                                                        "
         puts "                             @@      @                                                                    "
