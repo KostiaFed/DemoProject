@@ -1,67 +1,54 @@
 # Show the author of a chosen kata/test
 # Works as follows:
-# entry example: "author 'Hryniv_kata1.rb'"
+# entry example: "author 'Hryniv_kata1'" (no file extension needed)
 # returns name, surname and github of the author
 
 class Author
+
   def run(file)
-    surname = file.split("_")[0]
-    case surname
-    when "Hryniv"
-      if File.file?("katas/AnastasiiaHryniv/#{file}") ||
-         File.file?("spec/AnastasiiaHryniv/#{file}")
+    surname = file.split("_")[0].downcase
+    # checking if such file exists
+    if @files_results_array.include?("#{file.downcase}.rb") ||
+       @files_results_array.include?("#{file.downcase}_spec.rb")
+      case surname
+      when "hryniv"
         author = "Author: Anastasiia Hryniv\nGithub: anastasiiahryniv"
-      end
-    when "Stegnytskyi"
-      if File.file?("katas/AndriiStegnytskyi/#{file}") ||
-         File.file?("spec/AndriiStegnytskyi/#{file}")
+      when "stegnytskyi"
         author = "Author: Andrii Stegnytskyi\nGithub: AndriiStegnytskyi"
-      end
-    when "Koval"
-      if File.file?("katas/IrynaKoval/#{file}") ||
-         File.file?("spec/IrynaKoval/#{file}")
+      when "koval"
         author = "Author: Irina Koval\nGithub: Beerka1"
-      end
-    when "Fedorenko"
-      if File.file?("katas/KostiaFedorenko/#{file}") ||
-         File.file?("spec/KostiaFedorenko/#{file}")
+      when "fedorenko"
         author = "Author: Kostia Fedorenko\nGithub: KostiaFed"
-      end
-    when "Sivachenko"
-      if File.file?("katas/OlexiySivachenko/#{file}") ||
-         File.file?("spec/OlexiySivachenko/#{file}")
+      when "sivachenko"
         author = "Author: Olexiy Sivachenko\nGithub: malk1ss"
-      end
-    when "Korkonishko"
-      if File.file?("katas/RomanKorkonishko/#{file}") ||
-         File.file?("spec/RomanKorkonishko/#{file}")
+      when "korkonishko"
         author = "Author: Roman Korkonishko\nGithub: kromch"
-      end
-    when "Malko"
-      if File.file?("katas/VladMalko/#{file}") ||
-         File.file?("spec/VladMalko/#{file}")
+      when "malko"
         author = "Author: Vlad Malko\nGithub: PrincTwilig"
-      end
-    when "Denysiuk"
-      if File.file?("katas/VladyslavDenysiuk/#{file}") ||
-         File.file?("spec/VladyslavDenysiuk/#{file}")
+      when "denysiuk"
         author = "Author: Vladyslav Denysiuk\nGithub: denysiuk"
-      end
-    when "Shevtsov"
-      if File.file?("katas/DmitriyShevtsov/#{file}") ||
-         File.file?("spec/DmitriyShevtsov/#{file}")
+      when "shevtsov"
         author = "Author: Dmitriy Shevtsov\nGithub: DmitriyShev"
-      end
-    when "Farat"
-      if File.file?("katas/OleksiiFarat/#{file}") ||
-         File.file?("spec/OleksiiFarat/#{file}")
+      when "farat"
         author = "Author: Oleksii Farat\nGithub: Oleksii-Farat"
       end
-    end
-    if author.nil?
-      "Please enter a correct file"
-    else
       author
+    else
+      "Please enter a correct file"
     end
+  end
+
+  private
+
+  def list_of_files
+    # take all the files from katas folder with their paths
+    files_array = Dir["katas/**/*"].map(&:downcase) + Dir["spec/**/*"].map(&:downcase)
+    @files_results_array = []
+    # remove their path, so that only name is left
+    files_array.map do |item|
+      item = File.basename(item)
+      @files_results_array << item
+    end
+    puts @files_results_array
   end
 end
