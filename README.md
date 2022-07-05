@@ -36,9 +36,11 @@
 Впринципі можна відправляти зміни напряму в головну гілку, але це небезпечно і може зашкодити роботі.
 
 ## Ideas
-- Comands yellow collor
+- Comands yellow color
 - Command 'run window file_name' - runs program in seperate console
-- Command 'author file_name' - describes who is autor of that file or who created that test
+- Command 'author file_name' - describes who is author of that file or who created that test
 - Сommand 'katas' - shows all the katas
 - Command 'specs' - shows all the tests
 - Function that parse command line
+- help with modificators -s (short/default) -d (description) -a (additional) -f (full)
+info for additional: count of authors, count of katas, count of functions, project created date
