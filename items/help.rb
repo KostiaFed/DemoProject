@@ -1,7 +1,7 @@
 require_relative 'help_modificators'
 
 class Help
-  def self.run(flag_par)
+  def run(flag_par)
     #### Get list of existing functions
     data = []
     File.open('./help.txt', 'r') do |file|
