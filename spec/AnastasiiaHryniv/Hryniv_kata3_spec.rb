@@ -1,4 +1,4 @@
-require './katas/AnastasiiaHryniv/Hryniv_kata3.rb'
+require './katas/AnastasiiaHryniv/Hryniv_kata3'
 
 describe 'new_avg' do
   context 'given array of donations and expected new average' do

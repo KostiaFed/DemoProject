@@ -48,7 +48,7 @@ describe '#converter' do
     it 'Nil' do
       expect { converter(nil) }.to raise_error(ArgumentError)
     end
-  
+
     it 'Zero' do
       expect(converter(0)).to eq(0)
     end

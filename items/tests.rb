@@ -2,10 +2,10 @@
 # Створіть клас Test і в ньому метод run
 # return має бути результат всіх тестів в вигляді строки
 class Tests
-  def run  
-    tests_array =  Dir['**/*_{spec.rb}']
+  def run
+    tests_array = Dir['**/*_{spec.rb}']
     results_array = []
-    tests_array.map do |file| 
+    tests_array.map do |file|
       file = File.basename(file)
       results_array << file
     end

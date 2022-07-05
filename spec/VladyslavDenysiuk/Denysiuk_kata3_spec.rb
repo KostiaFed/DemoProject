@@ -1,4 +1,4 @@
-require './katas/VladyslavDenysiuk/Denysiuk_kata3.rb'
+require './katas/VladyslavDenysiuk/Denysiuk_kata3'
 
 describe 'sum-sequence' do
   input_begin_greater_than_end = [[3, 1, 1], [15, 4, 2], [6, 2, 2], [100, 50, 10]]

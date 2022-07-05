@@ -1,18 +1,16 @@
-require './katas/KostiaFedorenko/Fedorenko_kata1.rb'
+require './katas/KostiaFedorenko/Fedorenko_kata1'
 
 test = Struct.new(:input, :output)
 
 describe '#get_volume_of_cuboid' do
-
   context 'When any input given' do
-
     it 'String' do
       tests = [
         test.new(['1', 2, 3], ArgumentError),
         test.new([1, '2', 3], ArgumentError),
         test.new([1, 2, '3'], ArgumentError),
-        test.new(['1', '2', '3'], ArgumentError),
-        test.new(['a', '2', '3'], ArgumentError)
+        test.new(%w[1 2 3], ArgumentError),
+        test.new(%w[a 2 3], ArgumentError)
       ]
 
       tests.each do |test|
@@ -37,11 +35,11 @@ describe '#get_volume_of_cuboid' do
 
     it 'Integer' do
       tests = [
-          test.new([1, 2, 3], 6),
-          test.new([2, 3, 4], 24),
-          test.new([3, 4, 5], 60),
-          test.new([4, 5, 6], 120),
-          test.new([5, 6, 7], 210)
+        test.new([1, 2, 3], 6),
+        test.new([2, 3, 4], 24),
+        test.new([3, 4, 5], 60),
+        test.new([4, 5, 6], 120),
+        test.new([5, 6, 7], 210)
       ]
 
       tests.each do |test|
@@ -55,18 +53,18 @@ describe '#get_volume_of_cuboid' do
     end
 
     it 'Zero' do
-      expect(get_volume_of_cuboid(0,0,0)).to eq(0)
+      expect(get_volume_of_cuboid(0, 0, 0)).to eq(0)
     end
   end
-    
+
   context 'When true given' do
     it 'Integer' do
       tests = [
-          test.new([1, 2, 3], 6),
-          test.new([2, 3, 4], 24),
-          test.new([3, 4, 5], 60),
-          test.new([4, 5, 6], 120),
-          test.new([5, 6, 7], 210)
+        test.new([1, 2, 3], 6),
+        test.new([2, 3, 4], 24),
+        test.new([3, 4, 5], 60),
+        test.new([4, 5, 6], 120),
+        test.new([5, 6, 7], 210)
       ]
 
       tests.each do |test|
@@ -77,11 +75,11 @@ describe '#get_volume_of_cuboid' do
 
     it '-Integer' do
       tests = [
-          test.new([-1, 2, 3], -6),
-          test.new([2, -3, 4], -24),
-          test.new([3, 4, -5], -60),
-          test.new([4, -5, -6], 120),
-          test.new([-5, -6, -7], -210)
+        test.new([-1, 2, 3], -6),
+        test.new([2, -3, 4], -24),
+        test.new([3, 4, -5], -60),
+        test.new([4, -5, -6], 120),
+        test.new([-5, -6, -7], -210)
       ]
 
       tests.each do |test|

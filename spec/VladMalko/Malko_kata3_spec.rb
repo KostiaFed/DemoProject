@@ -1,11 +1,9 @@
-require './katas/VladMalko/Malko_kata3.rb'
+require './katas/VladMalko/Malko_kata3'
 
 test = Struct.new(:input, :output)
 
 describe '#series_sum' do
-
   context 'When any input given' do
-
     it 'String' do
       tests = [
         test.new(['1'], ArgumentError),
@@ -37,9 +35,9 @@ describe '#series_sum' do
 
     it 'Integer' do
       tests = [
-          test.new([1], "1.00"),
-          test.new([2], "1.25"),
-          test.new([3], "1.39"),
+        test.new([1], '1.00'),
+        test.new([2], '1.25'),
+        test.new([3], '1.39')
       ]
 
       tests.each do |test|
@@ -53,7 +51,7 @@ describe '#series_sum' do
     end
 
     it 'Zero' do
-      expect(series_sum(0)).to eq("0.00")
+      expect(series_sum(0)).to eq('0.00')
     end
   end
 end

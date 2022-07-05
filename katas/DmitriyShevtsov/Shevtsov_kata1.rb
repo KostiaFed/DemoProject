@@ -3,8 +3,9 @@ def find_difference(a, b)
   bvol = b[0] * b[1] * b[2]
   if avol > bvol
     avol - bvol
-    elsif avol < bvol
+  elsif avol < bvol
     bvol - avol
-    else 0
-    end
+  else
+    0
+  end
 end

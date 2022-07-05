@@ -1,7 +1,6 @@
-require './katas/AnastasiiaHryniv/Hryniv_kata1.rb'
+require './katas/AnastasiiaHryniv/Hryniv_kata1'
 
 describe 'am_I_Wilson' do
-
   context 'when given real Wilson Prime number' do
     it 'returns true' do
       expect(am_I_Wilson(5)).to eq(true)
@@ -19,8 +18,7 @@ describe 'am_I_Wilson' do
 
   context 'when given special symbol' do
     it 'returns argument error' do
-    expect(am_I_Wilson('$')).to raise_error(ArgumentError)
+      expect(am_I_Wilson('$')).to raise_error(ArgumentError)
     end
   end
-
 end

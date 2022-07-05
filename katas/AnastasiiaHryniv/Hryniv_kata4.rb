@@ -1,5 +1,5 @@
 def stockList(listOfArt, listOfCat)
-  return "" if (listOfArt.length == 0) || (listOfCat.length == 0)
+  return '' if (listOfArt.length == 0) || (listOfCat.length == 0)
 
   books = Hash.new(0)
   listOfArt.each do |e|
@@ -10,5 +10,5 @@ def stockList(listOfArt, listOfCat)
 
   listOfCat.map do |e|
     "(#{e} : #{books[e]})"
-  end.join(" - ")
+  end.join(' - ')
 end

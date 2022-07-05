@@ -3,9 +3,9 @@ def sequence_sum(begin_number, end_number, step)
   counter = begin_number # increasing the counter by step each iteration
   if begin_number > end_number # error check
     0
-  else 
-    while counter <= end_number do
-      sum += counter 
+  else
+    while counter <= end_number
+      sum += counter
       counter += step
     end
     sum

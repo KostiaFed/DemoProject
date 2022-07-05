@@ -1,7 +1,6 @@
-require './katas/AndriiStegnytskyi/Stegnytskyi_kata4.rb'
+require './katas/AndriiStegnytskyi/Stegnytskyi_kata4'
 
-describe "#queue_time" do
-
+describe '#queue_time' do
   input_no_people = [[[], 1],
                      [[], 5],
                      [[], 10],
@@ -31,8 +30,8 @@ describe "#queue_time" do
   output_one_till_many_people = [15, 18, 22, 10, 6]
 
   input_many_people_many_tills = [[[1, 2, 3, 4, 5], 2],
-                                 [[5, 3, 6, 4, 7, 2], 2],
-                                 [[10, 3, 5, 7, 2, 3], 3]]
+                                  [[5, 3, 6, 4, 7, 2], 2],
+                                  [[10, 3, 5, 7, 2, 3], 3]]
   output_many_people_many_tills = [9, 16, 10]
 
   input_incorrect_tills = [[[1, 2, 3, 4, 5], 0],
@@ -40,9 +39,8 @@ describe "#queue_time" do
                            [[10, 3, 5, 7, 2, 3], -2]]
   output_incorrect_tills = ['Supermarket is closed']
 
-
   context 'when no people are in the queue' do
-    input_no_people.zip(output_no_people).each do |input, output|
+    input_no_people.zip(output_no_people).each do |input, _output|
       it { expect(queue_time(input[0], input[1])).to eql(0) }
     end
   end
@@ -72,7 +70,7 @@ describe "#queue_time" do
   end
 
   context 'when there is incorrect number of tills' do
-    input_incorrect_tills.zip(output_incorrect_tills).each do |input, output|
+    input_incorrect_tills.zip(output_incorrect_tills).each do |input, _output|
       it { expect(queue_time(input[0], input[1])).to eql('Supermarket is closed') }
     end
   end

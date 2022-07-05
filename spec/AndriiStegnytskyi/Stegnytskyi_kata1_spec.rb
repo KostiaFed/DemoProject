@@ -1,5 +1,4 @@
-
-require './katas/AndriiStegnytskyi/Stegnytskyi_kata1.rb'
+require './katas/AndriiStegnytskyi/Stegnytskyi_kata1'
 
 describe '#between' do
   it 'returns positive numbers' do

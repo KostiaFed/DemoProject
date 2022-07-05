@@ -1,10 +1,10 @@
-require './katas/VladyslavDenysiuk/Denysiuk_kata5.rb'
+require './katas/VladyslavDenysiuk/Denysiuk_kata5'
 
 describe PaginationHelper do
   pag = PaginationHelper.new(%w[a b c d e f], 4)
   describe '#page_count' do
     context 'At any input' do
-      it {expect(pag.page_count).to eql(2)}
+      it { expect(pag.page_count).to eql(2) }
     end
   end
   describe '#item_count' do

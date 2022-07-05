@@ -1,4 +1,4 @@
-require './katas/VladyslavDenysiuk/Denysiuk_kata2.rb'
+require './katas/VladyslavDenysiuk/Denysiuk_kata2'
 
 describe 'starting_mark' do
   input = [1.52, 1.83, 1.22, 2.13, 1.75]

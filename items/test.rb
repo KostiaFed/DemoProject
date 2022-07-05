@@ -8,7 +8,7 @@ class Test
     folder_name = %w[AnastasiiaHryniv AndriiStegnytskyi DmitriyShevtsov IrynaKoval KostiaFedorenko OleksiiFarat
                      OlexiySivachenko RomanKorkonishko VladMalko VladyslavDenysiuk]
     selected_folder = ''
-    user_choice = test_name.downcase.partition("_")[0]
+    user_choice = test_name.downcase.partition('_')[0]
     case user_choice
     when 'hryniv'
       selected_folder = folder_name[0]
@@ -31,7 +31,7 @@ class Test
     when 'denysiuk'
       selected_folder = folder_name[9]
     else
-      raise Exception, "You have entered wrong value, please try again"
+      raise Exception, 'You have entered wrong value, please try again'
     end
     result = "bin/rspec spec/#{selected_folder}/#{test_name.capitalize}.rb"
     `#{result}`

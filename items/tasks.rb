@@ -4,13 +4,12 @@
 # 1. Назва папки: ката1 ката2
 # 2. Назва папки: ката1 ката2
 
-#dirs = Dir.entries('../katas')
-#dirs.each do |d|
+# dirs = Dir.entries('../katas')
+# dirs.each do |d|
 #  p d + ":"
-#end
+# end
 class Tasks
-
-Dir.chdir('../katas')
+  Dir.chdir('../katas')
 
   @@files = Dir['**/*'].map do |f|
     if File.directory? f
@@ -21,7 +20,6 @@ Dir.chdir('../katas')
   end
 
   def self.run
-    return @@files
+    @@files
   end
-
 end

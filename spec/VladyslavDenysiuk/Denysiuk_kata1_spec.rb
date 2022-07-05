@@ -1,4 +1,4 @@
-require './katas/VladyslavDenysiuk/Denysiuk_kata1.rb'
+require './katas/VladyslavDenysiuk/Denysiuk_kata1'
 
 describe 'litres' do
   input_less_than_one = [0.1, 0.2, 0.3, 0.4]
@@ -10,7 +10,7 @@ describe 'litres' do
   input_big_values = [1000, 20_000, 50_000]
   output_big_values = [500, 10_000, 25_000]
 
-  input_strings = ["some string", "some string with number 1"]
+  input_strings = ['some string', 'some string with number 1']
   output_strings = [nil, nil]
 
   input_random_values = [2, 1, 10, 1.4, 12.3, 0.82, 11.8, 1787, 0]

@@ -1,4 +1,4 @@
-require './katas/AndriiStegnytskyi/Stegnytskyi_kata2.rb'
+require './katas/AndriiStegnytskyi/Stegnytskyi_kata2'
 
 describe '#string_clean' do
   context 'checks for different inputs' do

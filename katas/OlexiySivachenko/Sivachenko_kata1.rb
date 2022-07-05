@@ -1,3 +1,3 @@
 def remove(s)
-  s.gsub(/!*$/,'')
+  s.gsub(/!*$/, '')
 end

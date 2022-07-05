@@ -1,4 +1,4 @@
-require './katas/AnastasiiaHryniv/Hryniv_kata2.rb'
+require './katas/AnastasiiaHryniv/Hryniv_kata2'
 
 describe '.two_decimal_places' do
   context 'When given a number' do
@@ -19,5 +19,4 @@ describe '.two_decimal_places' do
       expect(two_decimal_places(-18.678)).to eq(-18.68)
     end
   end
-
 end

@@ -1,4 +1,4 @@
-require './katas/AndriiStegnytskyi/Stegnytskyi_kata5.rb'
+require './katas/AndriiStegnytskyi/Stegnytskyi_kata5'
 
 input_length_sup_u_k = [[50, 25],
                         [3332, 973],
@@ -7,12 +7,12 @@ input_length_sup_u_k = [[50, 25],
                         [1745, 645]]
 output_length_sup_u_k = [2, 1391, 1246, 2047, 474]
 
-input_comp = [[74626],
-              [71749],
-              [56890],
-              [60441],
-              [30054]]
-output_comp = [37128, 35692, 28281, 30054, 14884]
+input_comp = [[74_626],
+              [71_749],
+              [56_890],
+              [60_441],
+              [30_054]]
+output_comp = [37_128, 35_692, 28_281, 30_054, 14_884]
 
 describe '#length_sup_u_k' do
   context 'when using positive values' do

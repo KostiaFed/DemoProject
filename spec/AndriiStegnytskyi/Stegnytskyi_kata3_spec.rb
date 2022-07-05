@@ -1,5 +1,4 @@
-
-require './katas/AndriiStegnytskyi/Stegnytskyi_kata3.rb'
+require './katas/AndriiStegnytskyi/Stegnytskyi_kata3'
 
 input_positive_values = [[500, 15, 0.9],
                          [100, 10, 0.95],
