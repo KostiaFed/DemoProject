@@ -2,7 +2,7 @@ require_relative 'help_modificators.rb'
 
 class Help
 
-def self.run(flag_par)
+def run(flag_par)
 
 #### Get list of existing functions
     data = []
