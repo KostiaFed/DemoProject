@@ -1,0 +1,8 @@
+Displays information about commands ('-s' just to show list of command '-d' to show info with descriptions and number of command to show only this one)
+Displays all tasks
+Displays all tests
+Runs the test
+Display only lines of code, comments do not need to be displayed.
+Launches the task contained in the file file_name
+Show the author of a chosen kata/test
+Wrong command! Type 'help' to see list of commands
