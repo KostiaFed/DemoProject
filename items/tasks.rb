@@ -12,17 +12,16 @@ class Tasks
 
 Dir.chdir('../katas')
 
-@@files = Dir['**/*'].map do |f|
-if File.directory? f
-  puts f + ':'
-elsif File.file? f
-  puts '--' + File.basename(f, '.rb')
-else
-end
-end
+  @@files = Dir['**/*'].map do |f|
+    if File.directory? f
+      puts f + ':'
+    elsif File.file? f
+      puts '--' + File.basename(f, '.rb')
+    end
+  end
 
-def self.run
-  return @@files
-end
+  def self.run
+    return @@files
+  end
 
 end
