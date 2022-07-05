@@ -3,11 +3,19 @@
 # entry example: "author 'Hryniv_kata1'" (no file extension needed)
 # returns name, surname and github of the author
 
+# ruby kernel generate path
+# File.dirname(__FILE__)
+# private method generate custom path -> takes file which takes katas/specs
+# File.join("path", "to", "join") 
+
 class Author
+
   def run(file)
+    puts File.expand_path(file, __dir__)
     surname = file.split("_")[0].downcase
     case surname
     when "hryniv"
+      # in each if statement we are checking whether the file exists
       if File.file?("katas/AnastasiiaHryniv/#{file}.rb") ||
          File.file?("spec/AnastasiiaHryniv/#{file}.rb")
         author = "Author: Anastasiia Hryniv\nGithub: anastasiiahryniv"

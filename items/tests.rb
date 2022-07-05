@@ -4,9 +4,11 @@
 class Tests
   def run  
     tests_array =  Dir['**/*_{spec.rb}']
+    results_array = []
     tests_array.map do |file| 
       file = File.basename(file)
+      results_array << file
     end
-    tests_array
+    results_array
   end
 end
