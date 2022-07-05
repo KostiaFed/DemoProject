@@ -17,7 +17,7 @@ def self.run(flag_par)
 #### Parameter
       if(flag_par.to_i.to_s == flag_par) #number
         return numeric(flag_par.to_i, data, ds)
-      elsif(flag_par == '-s') #short
+      elsif(flag_par == '-s'or flag_par == '' or flag_par == nil) #short
         return short(data)
       elsif(flag_par == '-d') #description
         return description(data, ds)
