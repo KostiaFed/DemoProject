@@ -11,8 +11,6 @@ require './items/author.rb'
 
 class Main
     def initialize
-        output = ""
-
         logo()
         # Starts main loop
         loop()
