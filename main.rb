@@ -22,8 +22,8 @@ class Main
             puts Help.new.run(argument)
         when "run"                          #not ready yet
             # puts Run.new.run(argument)
-        when "show"                         #not ready yet
-            puts Show.new.run()
+        when "show"
+            puts Show.new.run(argument)
         when "specs"                        #fail
             puts Specs.new.run()
         when "tasks"                        #fail

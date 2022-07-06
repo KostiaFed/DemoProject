@@ -1,10 +1,10 @@
 class Shows
-  def name
-    @name = gets.chomp
+  def name(argument)
+    @name = argument.split('_')[0]
   end
 
-  def name_kata
-    @name_kata = gets.chomp
+  def name_kata(argument)
+    @name_kata = argument.gsub(/[^0-9]/, '')
   end
 
   def get_path_content(dir)
@@ -35,20 +35,17 @@ class Shows
 
   def open_files(a)
     @path_to = a
-    p @path_to
     f = File.new(@path_to, 'r:UTF-8')
     content = f.read.gsub(/#.*$/, '')
-    puts content
+    return content
   end
 end
 
 class Show
-  def run
-    puts 'Enter your name: '
+  def run(argument)
     start = Shows.new
-    name = start.name
-    puts 'Enter your name kata: '
-    name_kata = start.name_kata
+    name = start.name(argument)
+    name_kata = start.name_kata(argument)
     path_to_file = start.get_path_content('katas')
     start.pattern_name(name, name_kata, path_to_file)
     pattern_name = start.pattern_name(name, name_kata, path_to_file)
