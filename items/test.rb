@@ -25,7 +25,7 @@ class TestService
 
   def get_result_string(user_input)
     user_choice = receive_part_before_underscore(user_input)
-    "bin/rspec spec/#{receive_key_value_pair_from_hash(user_choice, CHOICES)[user_choice]}/#{input.capitalize}.rb"
+    "bin/rspec spec/#{receive_key_value_pair_from_hash(user_choice, CHOICES)[user_choice]}/#{user_input.capitalize}.rb"
   end
 end
 
