@@ -1,9 +1,3 @@
-<<<<<<< Updated upstream
-# Тут потрібно створити програму яка буде повертати код вибраної кати
-# Створіть клас Show і в ньому метод run 
-# в метод run буде приходити параметр з іменем кати
-# return повертає строку з кодом кати (ця строка буде виведена в консоль)
-=======
 class Shows
   def name(argument)
     @name = argument.split('_')[0]
@@ -59,4 +53,3 @@ class Show
     start.open_files(pattern_name_tos)
   end
 end
->>>>>>> Stashed changes

@@ -1,5 +1,5 @@
-class Specs
-  Start_path = '../spec'
+!class Specs
+  Start_path = './spec'
   def run()
     result = ""
     Dir.each_child(Start_path) {|tests|
@@ -7,8 +7,8 @@ class Specs
         path = Dir.new(Start_path+"/#{tests}")
         result += "#{tests}:\n"
         specs = ''
-        path.each_child {|test| specs += "  -#{test.gsub('.rb', '')}\n" } 
-        result += specs + "\n"
+        path.each_child {|test| specs += "  -#{test.gsub('.rb', '')}\n" }
+        result += specs
       end
     }
     result

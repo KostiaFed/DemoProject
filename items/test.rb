@@ -4,11 +4,15 @@
 # return має бути результат тесту
 
 class Test
-def run (test_name)
-  result = "bin/rspec spec/#{test_name}"
-  puts result
+  @@choices = { 'hryniv' => 'AnastasiiaHryniv', 'stegnytskyi' => 'AndriiStegnytskyi', 'shevtsov' => 'DmitriyShevtsov',
+                'koval' => 'IrynaKoval', 'fedorenko' => 'KostiaFedorenko', 'farat' => 'OleksiiFarat', 'siavchenko' => 'OlexiySivachenko',
+                'korkonishko' => 'RomanKorkonishko', 'malko' => 'VladMalko', 'denysiuk' => 'VladyslavDenysiuk' }
+  def run(test_name)
+    selected_folder = ''
+    user_choice = test_name.downcase.partition("_")[0]
+    raise Exception, "You have entered wrong value, please try again" unless @@choices.has_key?(user_choice)
+    selected_folder = @@choices.select { |key, _value| key == user_choice }
+    result = "bin/rspec spec/#{selected_folder[user_choice]}/#{test_name.capitalize}.rb"
+    `#{result}`
+  end
 end
-
-end
-test = Test.new
-test.run("KostiaFedorenko/Fedorenko_kata1_spec.rb")
