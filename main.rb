@@ -16,6 +16,7 @@ class Main
         buff = gets.chomp
         choose = buff.split(" ")[0]
         argument = buff.split(" ")[1]
+        arg = buff.split(" ")[2]
 
         case choose
         when "help"
@@ -23,7 +24,7 @@ class Main
         when "run"                          #not ready yet
             # puts Run.new.run(argument)
         when "show"
-            puts Show.new.run(argument)
+            puts Show.new.run(argument, arg)
         when "specs"                        #fail
             puts Specs.new.run()
         when "tasks"                        #fail

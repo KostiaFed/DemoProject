@@ -4,7 +4,7 @@ class Shows
   end
 
   def name_kata(argument)
-    @name_kata = argument.gsub(/[^0-9]/, '')
+    @name_kata = argument.gsub(/\D/, '')
   end
 
   def get_path_content(dir)
@@ -37,15 +37,16 @@ class Shows
     @path_to = a
     f = File.new(@path_to, 'r:UTF-8')
     content = f.read.gsub(/#.*$/, '')
-    return content
   end
 end
 
 class Show
-  def run(argument)
+  def run(argument, arg)
+    @argument = argument
+    @arg = arg
     start = Shows.new
-    name = start.name(argument)
-    name_kata = start.name_kata(argument)
+    name = start.name(@argument)
+    name_kata = start.name_kata(@arg)
     path_to_file = start.get_path_content('katas')
     start.pattern_name(name, name_kata, path_to_file)
     pattern_name = start.pattern_name(name, name_kata, path_to_file)
