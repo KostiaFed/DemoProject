@@ -1,6 +1,7 @@
 help [-s -d number]
 tasks
 tests
+specs
 test [testfile_name]
 show [file_name]
 run [file_name]
