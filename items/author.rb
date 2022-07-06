@@ -4,8 +4,20 @@
 # returns name, surname and github of the author
 
 class Author
+  def list_of_files
+    # take all the files from katas folder with their paths
+    files_array = Dir["katas/**/*"].map(&:downcase) + Dir["spec/**/*"].map(&:downcase)
+    @files_results_array = []
+    # remove their path, so that only name is left
+    files_array.map do |item|
+      item = File.basename(item)
+      @files_results_array << item
+    end
+    @files_results_array
+  end
 
   def run(file)
+    list_of_files
     surname = file.split("_")[0].downcase
     # checking if such file exists
     if @files_results_array.include?("#{file.downcase}.rb") ||
@@ -36,19 +48,5 @@ class Author
     else
       "Please enter a correct file"
     end
-  end
-
-  private
-
-  def list_of_files
-    # take all the files from katas folder with their paths
-    files_array = Dir["katas/**/*"].map(&:downcase) + Dir["spec/**/*"].map(&:downcase)
-    @files_results_array = []
-    # remove their path, so that only name is left
-    files_array.map do |item|
-      item = File.basename(item)
-      @files_results_array << item
-    end
-    puts @files_results_array
   end
 end
