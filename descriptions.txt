@@ -5,4 +5,5 @@ Runs the test
 Display only lines of code, comments do not need to be displayed.
 Launches the task contained in the file file_name
 Show the author of a chosen kata/test
+The "sort" function is designed to sort files in a folder alphabetically.
 Wrong command! Type 'help' to see list of commands

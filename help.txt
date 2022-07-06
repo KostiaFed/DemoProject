@@ -5,3 +5,4 @@ test testfile_name
 show file_name
 run file_name
 authors
+sort
