@@ -18,7 +18,7 @@ class Author
 
   def run(file)
     if file.nil?
-      'File is empty'
+      return 'File is empty'
     end
     list_of_files
     # checking if such file exists
