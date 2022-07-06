@@ -6,7 +6,7 @@ test [testfile_name]
 show [file_name]
 run [file_name]
 author [file_name]
-sort
+sort [folder_name]
 clear
 logo
 exit
