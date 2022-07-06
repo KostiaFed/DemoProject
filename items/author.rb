@@ -18,7 +18,7 @@ class Author
 
   def run(file)
     if file.nil?
-      'File is empty'
+      return 'File is empty'
     end
     list_of_files
     surname = file.split('_')[0].downcase
