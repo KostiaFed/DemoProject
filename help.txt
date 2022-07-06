@@ -1,8 +1,8 @@
-Choose function you want to read about:
--help ( enter 1)
--task (enter 2 )
--test (enter 3 )
--test testfile_name (enter 4 )
--show file_name (enter 5)
--run file_name (enter 6 )
--authors (enter 7 )
+help [-s -d number]
+task
+test
+test testfile_name
+show file_name
+run file_name
+authors
+sort
