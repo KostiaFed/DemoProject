@@ -1,7 +1,5 @@
 require './katas/AnastasiiaHryniv/Hryniv_kata1.rb'
 
-require 'wilson'
-
 describe 'am_I_Wilson' do
 
   context 'when given real Wilson Prime number' do
