@@ -17,6 +17,9 @@ class Author
   end
 
   def run(file)
+    if file.nil?
+      'File is empty'
+    end
     list_of_files
     # checking if such file exists
     if @files_results_array.include?("#{file.downcase}.rb") ||
