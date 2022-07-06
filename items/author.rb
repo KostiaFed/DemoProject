@@ -17,11 +17,14 @@ class Author
   end
 
   def run(file)
+    if file.nil?
+      'File is empty'
+    end
     list_of_files
+    surname = file.split('_')[0].downcase
     # checking if such file exists
     if @files_results_array.include?("#{file.downcase}.rb") ||
        @files_results_array.include?("#{file.downcase}_spec.rb")
-      surname = file.split('_')[0].downcase
       case surname
       when 'hryniv'
         author = "Author: Anastasiia Hryniv\nGithub: anastasiiahryniv"
