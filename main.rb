@@ -23,7 +23,7 @@ class Main
         when "run"                          #not ready yet
             # puts Run.new.run(argument)
         when "show"                         #not ready yet
-            # puts Show.new.run(argument)
+            puts Show.new.run()
         when "specs"                        #fail
             puts Specs.new.run()
         when "tasks"                        #fail
