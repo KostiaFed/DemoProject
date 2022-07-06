@@ -6,7 +6,7 @@
 class Author
   def list_of_files
     # take all the files from katas folder with their paths
-    files_array = Dir["katas/**/*"].map(&:downcase) + Dir["spec/**/*"].map(&:downcase)
+    files_array = Dir['katas/**/*'].map(&:downcase) + Dir['spec/**/*'].map(&:downcase)
     @files_results_array = []
     # remove their path, so that only name is left
     files_array.map do |item|
@@ -18,35 +18,37 @@ class Author
 
   def run(file)
     list_of_files
-    surname = file.split("_")[0].downcase
+    surname = file.split('_')[0].downcase
     # checking if such file exists
     if @files_results_array.include?("#{file.downcase}.rb") ||
        @files_results_array.include?("#{file.downcase}_spec.rb")
       case surname
-      when "hryniv"
+      when 'hryniv'
         author = "Author: Anastasiia Hryniv\nGithub: anastasiiahryniv"
-      when "stegnytskyi"
+      when 'stegnytskyi'
         author = "Author: Andrii Stegnytskyi\nGithub: AndriiStegnytskyi"
-      when "koval"
+      when 'koval'
         author = "Author: Irina Koval\nGithub: Beerka1"
-      when "fedorenko"
+      when 'fedorenko'
         author = "Author: Kostia Fedorenko\nGithub: KostiaFed"
-      when "sivachenko"
+      when 'sivachenko'
         author = "Author: Olexiy Sivachenko\nGithub: malk1ss"
-      when "korkonishko"
+      when 'korkonishko'
         author = "Author: Roman Korkonishko\nGithub: kromch"
-      when "malko"
+      when 'malko'
         author = "Author: Vlad Malko\nGithub: PrincTwilig"
-      when "denysiuk"
+      when 'denysiuk'
         author = "Author: Vladyslav Denysiuk\nGithub: denysiuk"
-      when "shevtsov"
+      when 'shevtsov'
         author = "Author: Dmitriy Shevtsov\nGithub: DmitriyShev"
-      when "farat"
+      when 'farat'
         author = "Author: Oleksii Farat\nGithub: Oleksii-Farat"
       end
       author
+    elsif @files_results_array.nil?
+      'File is empty'
     else
-      "Please enter a correct file"
+      'Please enter a correct file'
     end
   end
 end
