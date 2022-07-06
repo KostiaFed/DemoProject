@@ -6,4 +6,7 @@ Display only lines of code, comments do not need to be displayed.
 Launches the task contained in the file file_name
 Show the author of a chosen kata/test
 The "sort" function is designed to sort files in a folder alphabetically.
-Wrong command! Type 'help' to see list of commands
+command clears console.
+command clears console and displays logo.
+command stops program execution.
+Wrong command! Type 'help' to see list of commands.
