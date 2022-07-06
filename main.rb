@@ -21,10 +21,10 @@ class Main
         buff = gets.chomp
         choose = buff.split(" ")[0]
         argument = buff.split(" ")[1]
-        
+
         case choose
         when "help"
-            output = Help.new.run()
+            output = Help.new.run(argument)
             puts output
         when "run"                          #not ready yet
             # output = Run.new.run(argument)
