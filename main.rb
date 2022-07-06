@@ -23,6 +23,7 @@ class Main
         Loop()
     end
 
+<<<<<<< Updated upstream
     def Loop
         while true
             print "> "
@@ -55,6 +56,42 @@ class Main
             else
                 puts "Wrong command! Type 'help' to see list of commands."
             end
+=======
+    def loop
+        print "> "
+        buff = gets.chomp
+        choose = buff.split(" ")[0]
+        argument = buff.split(" ")[1]
+
+        case choose
+        when "help"
+            puts Help.new.run(argument)
+        when "run"                          #not ready yet
+            # puts Run.new.run(argument)
+        when "show"                         #not ready yet
+            puts Show.new.run(argument)
+        when "specs"                        #fail
+            puts Specs.new.run()
+        when "tasks"                        #fail
+            puts Tasks.new.run()
+        when "test"
+            puts Test.new.run(argument)
+        when "tests"
+            puts Tests.new.run()
+        when "author"                        #hz
+            puts Author.new.run(argument)
+        when "sort"
+            puts Sort.new.run(argument)
+        when "logo"
+            logo()
+        when "clear"
+            system("cls")
+        when "exit"
+            puts "\nBye!\n"
+            exit
+        else
+            puts "Wrong command! Type 'help' to see list of commands."
+>>>>>>> Stashed changes
         end
     end
 
