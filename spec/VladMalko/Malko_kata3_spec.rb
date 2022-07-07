@@ -1,10 +1,12 @@
 require './katas/VladMalko/Malko_kata3'
 
+#Creating structure with keys input and out
 test = Struct.new(:input, :output)
 
 describe '#series_sum' do
   context 'When any input given' do
     it 'String' do
+      #fill structure for our values
       tests = [
         test.new(['1'], ArgumentError),
         test.new(['2'], ArgumentError),
@@ -20,6 +22,7 @@ describe '#series_sum' do
     end
 
     it 'FLoat' do
+      #fill structure for our values
       tests = [
         test.new([1.1], ArgumentError),
         test.new([2.1], ArgumentError),
@@ -34,6 +37,7 @@ describe '#series_sum' do
     end
 
     it 'Integer' do
+      #fill structure for our values
       tests = [
         test.new([1], '1.00'),
         test.new([2], '1.25'),

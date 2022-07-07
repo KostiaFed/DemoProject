@@ -23,9 +23,18 @@ class Main
         argument = buff.split(" ")[1]
         
         case choose
+<<<<<<< Updated upstream
         when "help"
             output = Help.new.run()
             puts output
+=======
+        when "help"   
+          #Displays information about commands
+          #'-s' just to show list of command
+          #'-d' to show info with descriptions
+          # number of command to show only this one
+            puts Help.new.run(argument)
+>>>>>>> Stashed changes
         when "run"                          #not ready yet
             # output = Run.new.run(argument)
             # puts output
