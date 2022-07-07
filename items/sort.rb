@@ -1,7 +1,7 @@
 class Sort
-  def prepare_list_of_files
-    all_folders = Dir['katas/*/*']
+  def prepare_list_of_files(folder)
     result_files = []
+    all_folders = Dir["#{folder}/*/*"]
     all_folders.map do |files|
       result_files << File.basename(files)
     end
@@ -25,7 +25,7 @@ class Sort
     end
     if directory_exists(folder_name)
       puts 'Sorted files:'
-      files = prepare_list_of_files
+      files = prepare_list_of_files(folder_name)
       sort(files)
     else
       puts 'Folder does not exist! Enter correct folder name'
