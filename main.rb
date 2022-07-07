@@ -12,45 +12,56 @@ class Main
     end
 
     def loop
-        print "> "
-        buff = gets.chomp
-        choose = buff.split(" ")[0]
-        argument = buff.split(" ")[1]
-        arg = buff.split(" ")[2]
-
-        case choose
-        when "help"
-          #Displays information about commands
+        choose, user_input = retrieve_user_input
+        begin
+            case choose
+            when "help"
+            #Displays information about commands
           #'-s' just to show list of command
           #'-d' to show info with descriptions
           # number of command to show only this one
-            puts Help.new.run(argument)
-        when "run"                          #not ready yet
-            # puts Run.new.run(argument)
-        when "show"
-            puts Show.new.run(argument, arg)
-        when "specs"                        #fail
-            puts Specs.new.run()
-        when "tasks"                        #fail
-            puts Tasks.new.run()
-        when "test"
-            puts Test.new.run(argument)
-        when "tests"
-            puts Tests.new.run()
-        when "author"                        #hz
-            puts Author.new.run(argument)
-        when "sort"
-            puts Sort.new.run(argument)
-        when "logo"
-            logo()
-        when "clear"
-            system("cls")
-        when "exit"
-            puts "\nBye!\n"
-            exit
-        else
-            puts "Wrong command! Type 'help' to see list of commands."
+                @help ||= Help.new.run(*user_input)
+                puts @help
+            when "run"                          #not ready yet
+                # @run ||= Run.new.run(argument1, argument2)
+                # puts @run
+            when "show"
+                @show ||= Show.new.run(*user_input)
+                puts @show
+            when "specs"                        #fail
+                @specs ||= Specs.new.run(*user_input)
+                puts @specs
+            when "tasks"                        #fail
+                @tasks ||= Tasks.new.run(*user_input)
+                puts @tasks
+            when "test"
+                @test ||= Test.new.run(*user_input)
+                puts @test
+            when "tests"
+                @tests ||= Tests.new.run(*user_input)
+                puts @tests
+            when "author"                        #hz
+                @author ||= Author.new.run(*user_input)
+                puts @author
+            when "sort"
+                @sort ||= Sort.new.run(*user_input)
+                puts @sort
+            when "logo"
+                logo()
+            when "clear"
+                system("cls")
+            when "exit"
+                puts "\nBye!\n"
+                exit
+            else
+                puts "Wrong command! Type 'help' to see list of commands."
+            end
+        rescue ArgumentError
+            puts "Bad arguments! Type 'help' to see list of commands."
+        rescue
+            puts "Something went wrong! Internal error."
         end
+        
         loop()
     end
 
@@ -68,6 +79,15 @@ class Main
         puts " #@#;,B@@     @@@Xrh@M     :@       i@@@@ @#@@@@@@H     @@@@@@@@@   A@@:         @@@@&       @@#@@@@@@    "
         puts "\n\n\n\n"
         puts "Type 'help' to see list of commands:"
+    end
+
+    private
+    def retrieve_user_input
+        print "> "
+        buff = gets.chomp
+        choose = buff.split(" ")[0]
+        user_input = buff.split(" ")[1..-1]
+        return choose, user_input
     end
 end
 

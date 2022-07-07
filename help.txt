@@ -3,7 +3,7 @@ tasks
 tests
 specs
 test [testfile_name]
-show [file_name]
+show [surname] [katas_num]
 run [file_name]
 author [file_name]
 sort [folder_name]
