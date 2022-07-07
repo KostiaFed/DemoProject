@@ -13,10 +13,13 @@ class Main
 
     def loop
         choose, user_input = retrieve_user_input
-
         begin
             case choose
             when "help"
+            #Displays information about commands
+          #'-s' just to show list of command
+          #'-d' to show info with descriptions
+          # number of command to show only this one
                 @help ||= Help.new.run(*user_input)
                 puts @help
             when "run"                          #not ready yet
