@@ -6,9 +6,9 @@ Dir["./items/*.rb"].each {|file| require file }
 
 class Main
     def initialize
-        logo()
+        logo
         # Starts main loop
-        loop()
+        loop
     end
 
     def loop
@@ -40,10 +40,9 @@ class Main
             when "author"                        #hz
                 puts Author.new.run(*user_input)
             when "sort"
-                @sort ||= Sort.new.run(*user_input)
-                puts @sort
+                puts Sort.new.run(*user_input)
             when "logo"
-                logo()
+                logo
             when "clear"
                 system("cls")
             when "exit"
@@ -57,8 +56,8 @@ class Main
         rescue
             puts "Something went wrong! Internal error."
         end
-        
-        loop()
+
+        loop
     end
 
     def logo
