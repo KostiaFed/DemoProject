@@ -1,11 +1,11 @@
 class Specs
   SPEC = './spec'
 
-  def run()
+  def run
     result = ''
     Dir.each_child(SPEC) {|directory|
       unless directory.include?('.rb')
-        result+=get_folder_with_files(directory)
+        result += get_folder_with_files(directory)
       end
     }
     result
