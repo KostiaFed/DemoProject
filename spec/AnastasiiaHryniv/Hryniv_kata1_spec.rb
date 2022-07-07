@@ -19,7 +19,7 @@ describe 'am_I_Wilson' do
 
   context 'when given special symbol' do
     it 'returns argument error' do
-    expect(am_I_Wilson('$')).to raise_error(ArgumentError)
+    expect{am_I_Wilson('$')}.to raise_error(ArgumentError)
     end
   end
 
