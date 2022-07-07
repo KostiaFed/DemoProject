@@ -1,5 +1,6 @@
 require './katas/VladMalko/Malko_kata2.rb'
 
+#Creating structure with keys input and out
 test = Struct.new(:input, :output)
 
 describe '#circle_area' do
@@ -12,7 +13,7 @@ describe '#circle_area' do
     end
 
     #go expect with integer parameter with raise_error
-        it 'Integer' do
+    it 'Integer' do
       expect(circle_area(0)).to raise_error(ArgumentError)
       expect(circle_area(1)).to raise_error(ArgumentError)
     end
