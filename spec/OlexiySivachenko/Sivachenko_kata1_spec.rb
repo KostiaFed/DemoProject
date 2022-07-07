@@ -33,7 +33,7 @@ describe '#remove' do
     it 'should remove exclamation from the end of string' do
       tests = [
       test.new('Hi!!!!!', 'Hi'),
-      test.new('Hi! Hi! Hi?!', 'Hi?'),
+      test.new('Hi! Hi! Hi?!', 'Hi! Hi! Hi?'),
       test.new('!?Hi?!!!', '!?Hi?'),
       ]
 
