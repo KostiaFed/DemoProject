@@ -20,6 +20,10 @@ class Main
 
         case choose
         when "help"
+          #Displays information about commands
+          #'-s' just to show list of command
+          #'-d' to show info with descriptions
+          # number of command to show only this one
             puts Help.new.run(argument)
         when "run"                          #not ready yet
             # puts Run.new.run(argument)
