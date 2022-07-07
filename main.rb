@@ -13,21 +13,19 @@ class Main
 
     def loop
         choose, user_input = retrieve_user_input
+
         begin
             case choose
             when "help"
-            #Displays information about commands
-          #'-s' just to show list of command
-          #'-d' to show info with descriptions
-          # number of command to show only this one
-                @help ||= Help.new.run(*user_input)
-                puts @help
+                #Displays information about commands
+                #'-s' just to show list of command
+                #'-d' to show info with descriptions
+                # number of command to show only this one
+                puts Help.new.run(*user_input)
             when "run"                          #not ready yet
-                # @run ||= Run.new.run(argument1, argument2)
-                # puts @run
+                # puts Run.new.run(*user_input)
             when "show"
-                @show ||= Show.new.run(*user_input)
-                puts @show
+                puts Show.new.run(*user_input)
             when "specs"                        #fail
                 @specs ||= Specs.new.run(*user_input)
                 puts @specs
@@ -35,14 +33,12 @@ class Main
                 @tasks ||= Tasks.new.run(*user_input)
                 puts @tasks
             when "test"
-                @test ||= Test.new.run(*user_input)
-                puts @test
+                puts Test.new.run(*user_input)
             when "tests"
                 @tests ||= Tests.new.run(*user_input)
                 puts @tests
             when "author"                        #hz
-                @author ||= Author.new.run(*user_input)
-                puts @author
+                puts Author.new.run(*user_input)
             when "sort"
                 @sort ||= Sort.new.run(*user_input)
                 puts @sort
