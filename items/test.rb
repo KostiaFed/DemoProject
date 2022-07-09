@@ -17,15 +17,15 @@ class TestService
     input.downcase.partition("_")[0]
   end
 
-  def receive_key_value_pair_from_hash(input_string, input_hash)
-    raise ArgumentError, "You have entered wrong value, please try again" unless input_hash.has_key?(input_string)
+  def receive_value(input_string)
+    raise ArgumentError, "You have entered wrong value, please try again" unless CHOICES.has_key?(input_string)
 
-    input_hash.select { |key, _value| key == input_string }
+    CHOICES[input_string]
   end
 
   def get_result_string(user_input)
     user_choice = receive_part_before_underscore(user_input)
-    "bin/rspec spec/#{receive_key_value_pair_from_hash(user_choice, CHOICES)[user_choice]}/#{user_input.capitalize}.rb"
+    "bin/rspec spec/#{receive_value(user_choice)}/#{user_input.capitalize}.rb"
   end
 end
 
