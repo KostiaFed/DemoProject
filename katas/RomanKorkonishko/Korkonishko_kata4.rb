@@ -27,3 +27,7 @@ def balance(b)
     res << "Average expense  " << sprintf("%.2f",exp/k)
     res
 end
+
+b=ARGV[0].downcase=='nil' ? "" : ARGV[0]
+
+p balance(b)
