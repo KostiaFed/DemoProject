@@ -1,6 +1,6 @@
 def expanded_form(num)
   mnum = [] #new empty array, where we'll add all modified parts of equation
-  x = num.digits #making an array which consists of each digit from initial num
+  x = num.digits #A
 
   x.each_with_index do |i, index|
 if i == 0

@@ -20,9 +20,9 @@ def increment_string(input)
             x[-2] = x[-2].chars.pop
            x.join
       end
-      elsif input.match(/(\d+)/)
+    elsif input.match(/(\d+)/)
     (input.to_i + 1).to_s
-      end
+    end
   else
     input + "1"
   end
