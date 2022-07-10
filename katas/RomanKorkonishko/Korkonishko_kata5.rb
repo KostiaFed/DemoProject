@@ -15,3 +15,7 @@ def smallest(n)
   end  
   res
 end
+
+n=ARGV[0].downcase=='nil' ? 0 : ARGV[0].to_i 
+
+p smallest

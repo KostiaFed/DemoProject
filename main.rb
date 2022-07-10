@@ -19,7 +19,7 @@ class Main
             when "help"
                 puts Help.new.run(*user_input)
             when "run"
-                # puts Run.new.run(*user_input)
+                puts launch(*user_input)
             when "show"
                 puts Show.new.run(*user_input)
             when "specs"
