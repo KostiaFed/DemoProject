@@ -17,19 +17,15 @@ class Main
         begin
             case choose
             when "help"
-                #Displays information about commands
-                #'-s' just to show list of command
-                #'-d' to show info with descriptions
-                # number of command to show only this one
                 puts Help.new.run(*user_input)
-            when "run"                          #not ready yet
+            when "run"
                 # puts Run.new.run(*user_input)
             when "show"
                 puts Show.new.run(*user_input)
-            when "specs"                        #fail
+            when "specs"
                 @specs ||= Specs.new.run(*user_input)
                 puts @specs
-            when "tasks"                        #fail
+            when "tasks"
                 @tasks ||= Tasks.new.run(*user_input)
                 puts @tasks
             when "test"
@@ -37,7 +33,7 @@ class Main
             when "tests"
                 @tests ||= Tests.new.run(*user_input)
                 puts @tests
-            when "author"                        #hz
+            when "author"
                 puts Author.new.run(*user_input)
             when "sort"
                 puts Sort.new.run(*user_input)
