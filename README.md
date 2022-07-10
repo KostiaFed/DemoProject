@@ -12,28 +12,28 @@
 - ???
 
 ## Structure
-- Папка "katas" в якій папки кожного учасника з його катами, має бути вигляд katas/NameSurname/Surname_kata1.rb
-- Папка "specs" також з іменами і тестами в них, має бути вигляд spec/NameSurname/Surname_kata1_spec.rb (не забудьте змінити require до тестуємих кат)
-- Папка "items" тут будуть всі функції програми, кожна функція окремим файлом
-- main.rb Тут буде відбуватись вся робота з консоллю, та виклики всіх функцій
+- The "katas" folder, in which each participant's folder with his katas, should look like katas/NameSurname/Surname_kata1.rb
+- The "specs" folder, also with names and tests in them, should look like spec/NameSurname/Surname_kata1_spec.rb (don't forget to change require to the tested katas)
+- The "items" folder will contain all the functions of the program, each function is a separate file
+- main.rb All work with the console and calls of all functions will take place here
 
-Маю ще дещо пояснити за назви кат і тестів, бажано щоб ви закидували свої кати і тести на свої кати, і все це називали вашим NameSurname наприклад:
-ката Serhiy_kata1.rb
-тест на цю кату Serhiy_kata1_spec.rb
+I have to explain a little more about the names of kats and tests, it is desirable that you cast your kats and tests on your kats, and call it all your NameSurname, for example:
+kata Serhiy_kata1.rb
+test for this kata Serhiy_kata1_spec.rb
 
-Або щоб ви закидували свої тести на чужі кати і разом з тим чужі кати, в такому випадку ви називаєте їх NameSurname того кому ви робили тести
+Or that you throw your tests at other people's killers and at the same time other people's killers, in this case you call them the NameSurname of the person to whom you did the tests
 
-Також в файлах тестів ми маємо require до кат, не забудьте поміняти дорогу до кат
+Also, in the test files, we have a require to the cat, do not forget to change the path to the cat
 './katas/SerhiyAntonenko/Antonenko_kata1.rb'
 
 ## How it works?
-І так, в папці items кожна функція має окремий файл, в кожному файлі є клас з методом run в який передаються параметри і який повертає данні у вигляді строки(ця строка буде виведена в консоль).
-В такому випадку, для роботи достатньо require всі файли в main.rb, та запускати всі функції з нього.
+And so, in the items folder, each function has a separate file, in each file there is a class with the run method to which parameters are passed and which returns data in the form of a string (this string will be output to the console).
+In this case, it is enough to require all files in main.rb and run all functions from it.
 
 ## How to work with Git?
-Коротко, створюєте свою гілку з назвою SurnameBranch, та при потребі відправляєте пулреквест.
+In short, you create your branch with the name SurnameBranch, and if necessary, send a pull request.
 
-Впринципі можна відправляти зміни напряму в головну гілку, але це небезпечно і може зашкодити роботі.
+In principle, you can send changes directly to the master branch, but this is dangerous and can harm work.
 
 ## Ideas
 - Comands yellow color
