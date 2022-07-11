@@ -1,4 +1,5 @@
-#Way to calculate basketball teams points and show it
+#Way to calculate basketball teams points
+#and show it
 
 ### Format of main received string
 #  "Los Angeles Clippers 104 Dallas Mavericks 88,
@@ -17,7 +18,8 @@ def nba_cup(r,team)
   return "" if team.empty?
 
   #replacing all commas with a new line
-  #than searching games with this team in any game
+  #than searching games with this team in
+  #any game
   tr = r.tr(",", "\n").scan(/^.*#{team}\s.*$/)
 
   #if there team don`t played
@@ -26,7 +28,8 @@ def nba_cup(r,team)
   #if points is in float data type
   return "Error(float number):#{tr.join}" if tr.join.match(/\d+\.\d+/)
 
-#We divide all games with our team into separate results
+#We divide all games with our team into
+  #separate results
   tr.map! do |g|
     g.scan(/^.+\s\d+(?=\s)|\w.+\s\d+$/) end
 
@@ -48,6 +51,6 @@ def nba_cup(r,team)
     h["C"] += bs
   end
 
-#return string. Is no ; in the end
+#return string. Is no semicolon (;) in the end
   "#{team}:W=#{h["W"]};D=#{h["D"]};L=#{h["L"]};Scored=#{h["S"]};Conceded=#{h["C"]};Points=#{h["W"] * 3 + h["D"]}"
 end

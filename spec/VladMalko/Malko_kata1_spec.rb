@@ -1,6 +1,6 @@
 require './katas/VladMalko/Malko_kata1.rb'
 
-#Creating structure with keys input and out
+#Creating structure with keys input and output
 test = Struct.new(:input, :output)
 
 describe '#divisible_by' do
